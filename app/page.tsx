@@ -105,18 +105,6 @@ const portfolioItems = [
 const testimonials = [
   {
     quote:
-      "The launch was faster than expected and the product feels world-class. Communication was excellent throughout.",
-    name: "Mina Chen",
-    role: "Founder, Northstar Analytics",
-  },
-  {
-    quote:
-      "Every interaction felt thoughtful and strategic. We now have a site that actually helps us convert leads.",
-    name: "Daniel Brooks",
-    role: "Operations Lead, Lumen Commerce",
-  },
-  {
-    quote:
       "From the AI-generated workout plans to the Stripe subscription flow, everything just worked. The whole platform came together faster than I expected, and the code quality made it easy to keep iterating after launch.",
     name: "Efe Okafor",
     role: "Founder, Weekly Fit",
@@ -432,12 +420,6 @@ export default function Home() {
               <WhatsAppIcon className="h-4 w-4" />
               Chat on WhatsApp
             </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Schedule a free consultation
-            </a>
           </div>
         </div>
       </section>
@@ -459,9 +441,7 @@ export default function Home() {
             <p className="mt-1">© 2026 SomtoScript. All rights reserved.</p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="transition hover:text-white">Instagram</a>
-            <a href="#" className="transition hover:text-white">LinkedIn</a>
-            <a href="#" className="transition hover:text-white">X</a>
+            <a href="https://github.com/soomto12" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">GitHub</a>
             <a href="mailto:edokasomtochukwu@gmail.com" className="transition hover:text-white">edokasomtochukwu@gmail.com</a>
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">WhatsApp: +234 810 571 5588</a>
           </div>
