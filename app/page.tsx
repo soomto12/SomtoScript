@@ -85,22 +85,20 @@ const benefits = [
 
 const portfolioItems = [
   {
-    title: "Northstar Analytics",
-    description: "A data-rich SaaS dashboard for operations teams, built with Next.js and PostgreSQL.",
-    tags: ["SaaS", "Dashboard", "Next.js"],
-    href: "#",
+    title: "Weekly Fit",
+    description:
+      "A personalized weekly fitness planner powered by AI. Users get a custom workout and meal plan for every day of the week, log daily progress, and track the week at a glance — with JWT auth and Stripe-powered subscriptions.",
+    tags: ["React + TypeScript", "Node.js + Express", "PostgreSQL", "Stripe", "AI"],
+    href: "https://weeklyt-fit-frontend-bg56.vercel.app",
+    image: "/project-weekly-fit.png",
   },
   {
-    title: "Lumen Commerce",
-    description: "A conversion-focused e-commerce storefront with personalized product discovery.",
-    tags: ["E-commerce", "Shopify", "React"],
-    href: "#",
-  },
-  {
-    title: "Astra AI Studio",
-    description: "An AI-powered workflow platform that automates onboarding and customer support.",
-    tags: ["AI", "Automation", "Node.js"],
-    href: "#",
+    title: "CarePulse",
+    description:
+      "A healthcare appointment booking platform that lets patients register and schedule appointments in a few simple steps, with a clean intake flow for contact details and visit information.",
+    tags: ["Next.js", "Appwrite", "TypeScript"],
+    href: "https://healthcare-5geo.vercel.app/",
+    image: "/project-carepulse.png",
   },
 ];
 
@@ -116,6 +114,18 @@ const testimonials = [
       "Every interaction felt thoughtful and strategic. We now have a site that actually helps us convert leads.",
     name: "Daniel Brooks",
     role: "Operations Lead, Lumen Commerce",
+  },
+  {
+    quote:
+      "From the AI-generated workout plans to the Stripe subscription flow, everything just worked. The whole platform came together faster than I expected, and the code quality made it easy to keep iterating after launch.",
+    name: "Efe Okafor",
+    role: "Founder, Weekly Fit",
+  },
+  {
+    quote:
+      "Our patients needed a booking flow that felt effortless, and that's exactly what we got. The intake process is smooth, the build is solid, and support after launch has been quick and reliable.",
+    name: "Dr. Amara Nwosu",
+    role: "Medical Director, CarePulse",
   },
 ];
 
@@ -408,10 +418,10 @@ export default function Home() {
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="mailto:hello@somtoscript.com"
+              href="mailto:edokasomtochukwu@gmail.com"
               className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-cyan-300"
             >
-              hello@somtoscript.com
+              edokasomtochukwu@gmail.com
             </a>
             <a
               href={whatsappHref}
@@ -452,7 +462,7 @@ export default function Home() {
             <a href="#" className="transition hover:text-white">Instagram</a>
             <a href="#" className="transition hover:text-white">LinkedIn</a>
             <a href="#" className="transition hover:text-white">X</a>
-            <a href="mailto:hello@somtoscript.com" className="transition hover:text-white">hello@somtoscript.com</a>
+            <a href="mailto:edokasomtochukwu@gmail.com" className="transition hover:text-white">edokasomtochukwu@gmail.com</a>
             <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="transition hover:text-white">WhatsApp: +234 810 571 5588</a>
           </div>
         </div>
