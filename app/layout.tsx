@@ -12,7 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
+  // Makes the generated OG image resolve to an absolute URL, which crawlers require.
+  metadataBase: new URL(siteUrl),
   title: "SomtoScript | Freelance Full-Stack Web Development",
   description:
     "Premium web development for startups and small businesses, including custom websites, SaaS apps, dashboards, e-commerce, AI integrations, and automation tools.",
@@ -28,6 +32,14 @@ export const metadata: Metadata = {
     description:
       "Premium web development for startups and small businesses, including custom websites, SaaS apps, dashboards, e-commerce, AI integrations, and automation tools.",
     type: "website",
+    url: siteUrl,
+    siteName: "SomtoScript",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SomtoScript | Freelance Full-Stack Web Development",
+    description:
+      "Premium web development for startups and small businesses, including custom websites, SaaS apps, dashboards, e-commerce, AI integrations, and automation tools.",
   },
 };
 
