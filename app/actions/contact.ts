@@ -71,7 +71,14 @@ export async function submitContactForm(
   const from = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !to || !from) {
-    console.error("[contact] Missing RESEND_API_KEY, CONTACT_TO_EMAIL, or CONTACT_FROM_EMAIL.");
+    // Name the missing variables so a misconfigured deploy is diagnosable from
+    // the logs. Never log the values themselves.
+    const missing = [
+      !apiKey && "RESEND_API_KEY",
+      !to && "CONTACT_TO_EMAIL",
+      !from && "CONTACT_FROM_EMAIL",
+    ].filter(Boolean);
+    console.error(`[contact] Missing environment variable(s): ${missing.join(", ")}`);
     return {
       status: "error",
       message: "The form is temporarily unavailable. Please reach out on WhatsApp or by email instead.",
