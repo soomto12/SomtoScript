@@ -8,6 +8,9 @@ import {
 } from "../lib/contact";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Deliberately loose: international formats vary and a rejected real number
+// costs more than a malformed one landing in the inbox.
+const PHONE_PATTERN = /^[+(]?[\d][\d\s()+.-]{5,24}$/;
 
 function escapeHtml(value: string) {
   return value
@@ -30,6 +33,7 @@ export async function submitContactForm(
   const values = {
     name: readField(formData, "name"),
     email: readField(formData, "email"),
+    phone: readField(formData, "phone"),
     projectType: readField(formData, "projectType"),
     budget: readField(formData, "budget"),
     message: readField(formData, "message"),
@@ -47,6 +51,10 @@ export async function submitContactForm(
   }
   if (!EMAIL_PATTERN.test(values.email) || values.email.length > 200) {
     errors.email = "Please enter a valid email address.";
+  }
+  // Optional: only validated when the visitor actually fills it in.
+  if (values.phone && !PHONE_PATTERN.test(values.phone)) {
+    errors.phone = "Please enter a valid phone number, or leave this blank.";
   }
   if (values.message.length < 10) {
     errors.message = "Please add a little more detail — 10 characters minimum.";
@@ -90,9 +98,17 @@ export async function submitContactForm(
   const rows: [string, string][] = [
     ["Name", values.name],
     ["Email", values.email],
+    ...(values.phone ? ([["WhatsApp", values.phone]] as [string, string][]) : []),
     ["Project type", projectType],
     ["Budget", budget],
   ];
+
+  // Only link to wa.me when the number is unambiguously international. A local
+  // number like "08105715588" has no country code, and guessing one would
+  // produce a link to a stranger's WhatsApp rather than the prospect's.
+  const whatsappDigits = values.phone.trim().startsWith("+")
+    ? values.phone.replace(/\D/g, "")
+    : "";
 
   const html = `
     <div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6;color:#18181b">
@@ -107,6 +123,11 @@ export async function submitContactForm(
           )
           .join("")}
       </table>
+      ${
+        whatsappDigits
+          ? `<p style="margin:0 0 20px"><a href="https://wa.me/${whatsappDigits}" style="display:inline-block;padding:10px 20px;background:#10b981;color:#ffffff;border-radius:999px;font-weight:600">Reply on WhatsApp</a></p>`
+          : ""
+      }
       <p style="margin:0 0 8px;color:#71717a">Message</p>
       <div style="white-space:pre-wrap;padding:16px;background:#f4f4f5;border-radius:8px">${escapeHtml(
         values.message

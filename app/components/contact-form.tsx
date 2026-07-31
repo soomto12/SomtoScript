@@ -86,6 +86,26 @@ export function ContactForm() {
         </div>
       </div>
 
+      <div>
+        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-slate-300">
+          WhatsApp number{" "}
+          <span className="font-normal text-slate-500">(optional — include country code)</span>
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          autoComplete="tel"
+          defaultValue={state.values.phone}
+          aria-invalid={Boolean(state.errors.phone)}
+          aria-describedby={state.errors.phone ? "phone-error" : undefined}
+          placeholder="+234 810 571 5588"
+          className={state.errors.phone ? errorInputClasses : inputClasses}
+        />
+        <FieldError id="phone-error" message={state.errors.phone} />
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-slate-300">

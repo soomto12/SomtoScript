@@ -20,10 +20,11 @@ export const BUDGETS = [
 export type ContactFormState = {
   status: "idle" | "success" | "error";
   message: string;
-  errors: Partial<Record<"name" | "email" | "message", string>>;
+  errors: Partial<Record<"name" | "email" | "phone" | "message", string>>;
   values: {
     name: string;
     email: string;
+    phone: string;
     projectType: string;
     budget: string;
     message: string;
@@ -34,5 +35,5 @@ export const initialContactState: ContactFormState = {
   status: "idle",
   message: "",
   errors: {},
-  values: { name: "", email: "", projectType: "", budget: "", message: "" },
+  values: { name: "", email: "", phone: "", projectType: "", budget: "", message: "" },
 };
