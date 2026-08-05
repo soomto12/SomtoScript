@@ -452,6 +452,23 @@ export default function Home() {
             <PortfolioCard key={item.title} {...item} featured={portfolioItems.length === 1} />
           ))}
         </div>
+
+        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
+          <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
+            <p className="text-sm font-semibold text-slate-900">Weekly Fit — product walkthrough</p>
+            <p className="mt-1 text-sm text-slate-600">
+              A quick look at the AI plan generator, daily logs, and subscription flow in action.
+            </p>
+          </div>
+          <video
+            controls
+            preload="none"
+            poster="/project-weekly-fit.png"
+            className="aspect-video w-full bg-black"
+          >
+            <source src="/weekly-fit-demo.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
 
       {/* ---------- About ---------- */}
