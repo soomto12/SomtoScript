@@ -119,6 +119,16 @@ const portfolioItems = [
     tags: ["React + TypeScript", "Node.js + Express", "PostgreSQL", "Stripe", "AI"],
     href: "https://weeklyt-fit-frontend-bg56.vercel.app",
     image: "/project-weekly-fit.png",
+    status: "Complete",
+  },
+  {
+    title: "CookMate",
+    description:
+      "A REST API that turns whatever ingredients you have on hand into a full AI-generated recipe — complete with cook time, difficulty, and an auto-generated shopping list for anything you're missing. JWT auth and recipe history included, with hands-free voice guidance for cooking steps on the way; the frontend shown is the in-progress UI.",
+    tags: ["Node.js + Express", "PostgreSQL + Prisma", "AI", "TypeScript"],
+    href: "https://github.com/soomto12/CookMate",
+    image: "/project-cookmate.png",
+    status: "In Progress",
   },
 ];
 
