@@ -122,11 +122,11 @@ const portfolioItems = [
     status: "Complete",
   },
   {
-    title: "CookMate",
+    title: "Mealio",
     description:
       "A REST API that turns whatever ingredients you have on hand into a full AI-generated recipe — complete with cook time, difficulty, and an auto-generated shopping list for anything you're missing. JWT auth and recipe history included, with hands-free voice guidance for cooking steps on the way; the frontend shown is the in-progress UI.",
     tags: ["Node.js + Express", "PostgreSQL + Prisma", "AI", "TypeScript"],
-    href: "https://github.com/soomto12/CookMate",
+    href: "https://mealio-ui-vxwv.vercel.app/",
     image: "/project-cookmate.png",
     status: "In Progress",
   },
