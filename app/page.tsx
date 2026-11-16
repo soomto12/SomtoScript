@@ -128,7 +128,7 @@ const portfolioItems = [
     tags: ["Node.js + Express", "PostgreSQL + Prisma", "AI", "TypeScript"],
     href: "https://mealio-ui-vxwv.vercel.app/",
     image: "/project-cookmate.png",
-    status: "In Progress",
+    status: "Complete",
   },
 ];
 
